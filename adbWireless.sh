@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# script to connect android device and computer through common wifi
+#
 
 ip=192.168.0.$1
 port=5555
