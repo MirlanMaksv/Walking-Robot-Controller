@@ -36,15 +36,6 @@ public class MainFragment extends BaseFragment {
     @BindView(R.id.pairedDevices)
     Button btnConnect;
 
-    @BindView(R.id.btnUp)
-    Button btnUp;
-    @BindView(R.id.btnDown)
-    Button btnDown;
-    @BindView(R.id.btnRight)
-    Button btnRight;
-    @BindView(R.id.btnLeft)
-    Button btnLeft;
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -71,7 +62,7 @@ public class MainFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.pairedDevices, R.id.btnUp, R.id.btnDown, R.id.btnRight, R.id.btnLeft})
+    @OnClick({R.id.pairedDevices, R.id.btnUp, R.id.btnDown, R.id.btnRight, R.id.btnLeft, R.id.btn0, R.id.btn180})
     public void onClick(Button button) {
         int id = button.getId();
         if (id == R.id.pairedDevices)
@@ -85,6 +76,10 @@ public class MainFragment extends BaseFragment {
             BluetoothService.getInstance().write("R".getBytes());
         else if (id == R.id.btnLeft)
             BluetoothService.getInstance().write("L".getBytes());
+        else if (id == R.id.btn0)
+            BluetoothService.getInstance().write("0".getBytes());
+        else if (id == R.id.btn180)
+            BluetoothService.getInstance().write("1".getBytes());
     }
 
     @Override

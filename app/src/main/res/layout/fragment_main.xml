@@ -14,7 +14,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
         android:text="@string/buttonName"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +34,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
         android:text="@string/btnUp"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toTopOf="@+id/btnDown"
@@ -49,14 +53,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
         android:text="@string/btnDown"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pairedDevices"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/btnRight"
@@ -66,7 +72,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
         android:text="@string/btnRight"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <Button
         android:id="@+id/btnLeft"
@@ -84,7 +92,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorButton"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
         android:text="@string/btnLeft"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="@+id/btnRight"
@@ -92,5 +102,43 @@
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnRight" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDown">
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/btnState_0"
+            android:textColor="@color/colorText" />
+
+        <Button
+            android:id="@+id/btn180"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/btnState_180"
+            android:textColor="@color/colorText" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

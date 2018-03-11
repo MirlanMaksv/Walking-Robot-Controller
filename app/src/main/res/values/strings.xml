@@ -7,4 +7,6 @@
     <string name="btnDown">Down</string>
     <string name="btnRight">Right</string>
     <string name="btnLeft">Left</string>
+    <string name="btnState_0">0</string>
+    <string name="btnState_180">180</string>
 </resources>
