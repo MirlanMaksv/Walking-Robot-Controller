@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.maksitaliev.mirlan.walkingrobotcontroller.R;
+import com.maksitaliev.mirlan.walkingrobotcontroller.bluetooth.BluetoothService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -22,12 +22,16 @@ import butterknife.ButterKnife;
  * Created by mirlan on 09.03.18.
  */
 
-public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAdapter.ViewHolder> {
+public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHolder> {
 
+    public interface OnListItemClicked {
+        void onItemClicked(BluetoothDevice device);
+    }
+
+    private OnListItemClicked listener;
     private List<BluetoothDevice> devices;
-    private boolean connecting = false;
 
-    public SimpleRecyclerAdapter(Set<BluetoothDevice> devices) {
+    public DevicesAdapter(Set<BluetoothDevice> devices) {
         this.devices = new ArrayList<>();
         this.devices.addAll(devices);
     }
@@ -51,6 +55,10 @@ public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAd
         return devices != null ? devices.size() : 0;
     }
 
+    public void setListener(OnListItemClicked listener) {
+        this.listener = listener;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.deviceName)
@@ -64,9 +72,8 @@ public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAd
             ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener((View v) -> {
-                if (!connecting) {
-                    connecting = true;
-                }
+                if (listener != null)
+                    listener.onItemClicked(devices.get(getAdapterPosition()));
             });
         }
     }

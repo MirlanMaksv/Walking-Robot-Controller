@@ -3,4 +3,8 @@
     <string name="deviceList">List of Devices</string>
     <string name="noBTAdapter">Device does not support bluetooth connection</string>
     <string name="buttonName">Paired devices</string>
+    <string name="btnUp">Up</string>
+    <string name="btnDown">Down</string>
+    <string name="btnRight">Right</string>
+    <string name="btnLeft">Left</string>
 </resources>
