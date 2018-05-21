@@ -1,3 +1,3 @@
 # Walking-Robot-Controller
 
-### Android remote controll application using Bluetooth
+### Android remote control application using Bluetooth
